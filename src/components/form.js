@@ -12,11 +12,22 @@ class Form extends React.Component{
                 <form onSubmit = {this.props.loadWeather}>
                     <input type="text" name="city" placeholder="City..."/>
                     <input type="text" name="country" placeholder="Country..."/>
-                    <button>Get Weather</button>
+                    <button>Get Weather HERE</button>
+                    <button>OR HERE</button>
+                    <button>This button too! </button>
+                   
                 </form>
+            
+          
+               
+               
+              
            
         )
     }
 }
+
+    
+    
 
 export default Form;

@@ -15,6 +15,9 @@ class App extends React.Component {
     city: undefined,
     country: undefined,
     humidity: undefined,
+    wind: undefined,
+    sunrise: undefined,
+    sunset: undefined,
     description: undefined,
     error: undefined
   }
@@ -38,7 +41,11 @@ class App extends React.Component {
         temperature: response.main.temp,
         city: response.name,
         country: response.sys.country,
+        wind: response.wind.speed,
         humidity: response.main.humidity,
+        sunrise: response.sys.sunrise,
+        sunset: response.sys.sunset,
+        wind: response.wind.speed,
         description: response.weather[0].description,
         error: ""
       })
@@ -67,6 +74,11 @@ class App extends React.Component {
                 <div className="col-xs-5 title-container">
                   <Titles />
                 </div>
+        
+ 
+           
+    
+      
                 <div className="col-xs-7 form-container">
                   <Form loadWeather={this.getWeather} />
                   <Weather
@@ -74,8 +86,13 @@ class App extends React.Component {
                     city={this.state.city}
                     country={this.state.country}
                     humidity={this.state.humidity}
+                    sunrise={this.state.sunrise}
+                    sunset={this.state.sunset}
+                    wind={this.state.wind}
                     description={this.state.description}
                     error={this.state.error}
+                    
+                    
                   />
                 </div>
               </div>
@@ -83,10 +100,13 @@ class App extends React.Component {
           </div>
         </div>
       </div>
+        
 
     )
   }
 }
 
+
 // App is exported as a component which allows it to be imported by another file
 export default App
+
